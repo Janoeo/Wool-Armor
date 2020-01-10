@@ -16,7 +16,7 @@ import net.minecraftforge.registries.ObjectHolder;
  * class use for handle all block
  */
 @SuppressWarnings("unused")
-public class Items {
+public class WoolItems {
 
     /**
      * Items declaration

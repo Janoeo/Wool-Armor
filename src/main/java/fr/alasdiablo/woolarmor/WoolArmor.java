@@ -2,8 +2,6 @@ package fr.alasdiablo.woolarmor;
 
 import fr.alasdiablo.woolarmor.utils.Registries;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 /**
  * main class of the mod
@@ -14,10 +12,5 @@ public class WoolArmor {
     /**
      * mod constructor
      */
-    public WoolArmor() {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-    }
-
-    private void setup(final FMLCommonSetupEvent event) {
-    }
+    public WoolArmor() {}
 }
