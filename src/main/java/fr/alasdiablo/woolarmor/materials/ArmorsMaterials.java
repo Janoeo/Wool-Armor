@@ -9,7 +9,9 @@ import net.minecraft.util.SoundEvents;
 
 public enum ArmorsMaterials implements IArmorMaterial {
 
-    RED_WOOL_ARMOR("red_wool", 75, new int[] {1, 2, 3, 1} ,75, Ingredient.fromItems(Registries.WOOLS_LIST), SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.2f);
+    RED_WOOL_ARMOR("red_wool", 75, new int[] {1, 2, 3, 1} ,75, Ingredient.fromItems(Registries.WOOLS_LIST), SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.2f),
+    WHITE_WOOL_ARMOR("white_wool", 75, new int[] {1, 2, 3, 1} ,75, Ingredient.fromItems(Registries.WOOLS_LIST), SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.2f),
+    YELLOW_WOOL_ARMOR("yellow_wool", 75, new int[] {1, 2, 3, 1} ,75, Ingredient.fromItems(Registries.WOOLS_LIST), SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.2f);
 
     /**
      * name of the material

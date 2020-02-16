@@ -10,6 +10,16 @@ public class Registries {
     public static final String RED_WOOL_LEGGINGS          = "red_wool_leggings";
     public static final String RED_WOOL_BOOTS             = "red_wool_boots";
 
+    public static final String WHITE_WOOL_HELMET            = "white_wool_helmet";
+    public static final String WHITE_WOOL_CHESTPLATE        = "white_wool_chestplate";
+    public static final String WHITE_WOOL_LEGGINGS          = "white_wool_leggings";
+    public static final String WHITE_WOOL_BOOTS             = "white_wool_boots";
+
+    public static final String YELLOW_WOOL_HELMET            = "yellow_wool_helmet";
+    public static final String YELLOW_WOOL_CHESTPLATE        = "yellow_wool_chestplate";
+    public static final String YELLOW_WOOL_LEGGINGS          = "yellow_wool_leggings";
+    public static final String YELLOW_WOOL_BOOTS             = "yellow_wool_boots";
+
 
     public static Item[] WOOLS_LIST = new Item[] {
             Blocks.BLACK_WOOL.asItem(),
