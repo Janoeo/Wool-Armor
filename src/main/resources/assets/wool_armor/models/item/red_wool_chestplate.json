@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "wool_armor:items/red_wool_chestplate"
-  }
-}
