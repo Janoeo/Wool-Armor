@@ -3,33 +3,34 @@ package fr.alasdiablo.woolarmor.init;
 import fr.alasdiablo.diolib.util.RegistryHelper;
 import fr.alasdiablo.diolib.util.Utils;
 import fr.alasdiablo.woolarmor.Registries;
+import fr.alasdiablo.woolarmor.WoolArmor;
+import fr.alasdiablo.woolarmor.item.WoolArmorBoots;
 import fr.alasdiablo.woolarmor.item.WoolMaterials;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class WoolItems {
 
-    public static final WoolArmor BLACK_WOOL_ARMOR      = of(Registries.BLACK_WOOL_ARMOR, WoolMaterials.BLACK_WOOL_MATERIAL);
-    public static final WoolArmor BLUE_WOOL_ARMOR       = of(Registries.BLUE_WOOL_ARMOR, WoolMaterials.BLUE_WOOL_MATERIAL);
-    public static final WoolArmor WHITE_WOOL_ARMOR      = of(Registries.WHITE_WOOL_ARMOR, WoolMaterials.WHITE_WOOL_MATERIAL);
-    public static final WoolArmor BROWN_WOOL_ARMOR      = of(Registries.BROWN_WOOL_ARMOR, WoolMaterials.BROWN_WOOL_MATERIAL);
-    public static final WoolArmor CYAN_WOOL_ARMOR       = of(Registries.CYAN_WOOL_ARMOR, WoolMaterials.CYAN_WOOL_MATERIAL);
-    public static final WoolArmor GRAY_WOOL_ARMOR       = of(Registries.GRAY_WOOL_ARMOR, WoolMaterials.GRAY_WOOL_MATERIAL);
-    public static final WoolArmor GREEN_WOOL_ARMOR      = of(Registries.GREEN_WOOL_ARMOR, WoolMaterials.GREEN_WOOL_MATERIAL);
-    public static final WoolArmor LIGHT_BLUE_WOOL_ARMOR = of(Registries.LIGHT_BLUE_WOOL_ARMOR, WoolMaterials.LIGHT_BLUE_WOOL_MATERIAL);
-    public static final WoolArmor LIGHT_GRAY_WOOL_ARMOR = of(Registries.LIGHT_GRAY_WOOL_ARMOR, WoolMaterials.LIGHT_GRAY_WOOL_MATERIAL);
-    public static final WoolArmor LIME_WOOL_ARMOR       = of(Registries.LIME_WOOL_ARMOR, WoolMaterials.LIME_WOOL_MATERIAL);
-    public static final WoolArmor MAGENTA_WOOL_ARMOR    = of(Registries.MAGENTA_WOOL_ARMOR, WoolMaterials.MAGENTA_WOOL_MATERIAL);
-    public static final WoolArmor ORANGE_WOOL_ARMOR     = of(Registries.ORANGE_WOOL_ARMOR, WoolMaterials.ORANGE_WOOL_MATERIAL);
-    public static final WoolArmor PINK_WOOL_ARMOR       = of(Registries.PINK_WOOL_ARMOR, WoolMaterials.PINK_WOOL_MATERIAL);
-    public static final WoolArmor PURPLE_WOOL_ARMOR     = of(Registries.PURPLE_WOOL_ARMOR, WoolMaterials.PURPLE_WOOL_MATERIAL);
-    public static final WoolArmor RED_WOOL_ARMOR        = of(Registries.RED_WOOL_ARMOR, WoolMaterials.RED_WOOL_MATERIAL);
-    public static final WoolArmor YELLOW_WOOL_ARMOR     = of(Registries.YELLOW_WOOL_ARMOR, WoolMaterials.YELLOW_WOOL_MATERIAL);
+    public static final WoolArmorItem BLACK_WOOL_ARMOR      = of(Registries.BLACK_WOOL_ARMOR, WoolMaterials.BLACK_WOOL_MATERIAL);
+    public static final WoolArmorItem BLUE_WOOL_ARMOR       = of(Registries.BLUE_WOOL_ARMOR, WoolMaterials.BLUE_WOOL_MATERIAL);
+    public static final WoolArmorItem WHITE_WOOL_ARMOR      = of(Registries.WHITE_WOOL_ARMOR, WoolMaterials.WHITE_WOOL_MATERIAL);
+    public static final WoolArmorItem BROWN_WOOL_ARMOR      = of(Registries.BROWN_WOOL_ARMOR, WoolMaterials.BROWN_WOOL_MATERIAL);
+    public static final WoolArmorItem CYAN_WOOL_ARMOR       = of(Registries.CYAN_WOOL_ARMOR, WoolMaterials.CYAN_WOOL_MATERIAL);
+    public static final WoolArmorItem GRAY_WOOL_ARMOR       = of(Registries.GRAY_WOOL_ARMOR, WoolMaterials.GRAY_WOOL_MATERIAL);
+    public static final WoolArmorItem GREEN_WOOL_ARMOR      = of(Registries.GREEN_WOOL_ARMOR, WoolMaterials.GREEN_WOOL_MATERIAL);
+    public static final WoolArmorItem LIGHT_BLUE_WOOL_ARMOR = of(Registries.LIGHT_BLUE_WOOL_ARMOR, WoolMaterials.LIGHT_BLUE_WOOL_MATERIAL);
+    public static final WoolArmorItem LIGHT_GRAY_WOOL_ARMOR = of(Registries.LIGHT_GRAY_WOOL_ARMOR, WoolMaterials.LIGHT_GRAY_WOOL_MATERIAL);
+    public static final WoolArmorItem LIME_WOOL_ARMOR       = of(Registries.LIME_WOOL_ARMOR, WoolMaterials.LIME_WOOL_MATERIAL);
+    public static final WoolArmorItem MAGENTA_WOOL_ARMOR    = of(Registries.MAGENTA_WOOL_ARMOR, WoolMaterials.MAGENTA_WOOL_MATERIAL);
+    public static final WoolArmorItem ORANGE_WOOL_ARMOR     = of(Registries.ORANGE_WOOL_ARMOR, WoolMaterials.ORANGE_WOOL_MATERIAL);
+    public static final WoolArmorItem PINK_WOOL_ARMOR       = of(Registries.PINK_WOOL_ARMOR, WoolMaterials.PINK_WOOL_MATERIAL);
+    public static final WoolArmorItem PURPLE_WOOL_ARMOR     = of(Registries.PURPLE_WOOL_ARMOR, WoolMaterials.PURPLE_WOOL_MATERIAL);
+    public static final WoolArmorItem RED_WOOL_ARMOR        = of(Registries.RED_WOOL_ARMOR, WoolMaterials.RED_WOOL_MATERIAL);
+    public static final WoolArmorItem YELLOW_WOOL_ARMOR     = of(Registries.YELLOW_WOOL_ARMOR, WoolMaterials.YELLOW_WOOL_MATERIAL);
 
     public static void init(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
@@ -53,21 +54,21 @@ public class WoolItems {
         );
     }
 
-    private static WoolArmor of(Registries.WoolArmorRegistriesName name, ArmorMaterial material) {
-        return new WoolArmor(name, material);
+    private static WoolArmorItem of(Registries.WoolArmorRegistriesName name, ArmorMaterial material) {
+        return new WoolArmorItem(name, material);
     }
 
-    private static class WoolArmor {
+    public static class WoolArmorItem {
         private final Item helmet;
         private final Item chestplate;
         private final Item leggings;
         private final Item boots;
 
-        public WoolArmor(Registries.WoolArmorRegistriesName name, ArmorMaterial material) {
-            this.helmet     = new ArmorItem(material, EquipmentSlot.HEAD, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
-            this.chestplate = new ArmorItem(material, EquipmentSlot.CHEST, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
-            this.leggings   = new ArmorItem(material, EquipmentSlot.LEGS, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
-            this.boots      = new ArmorItem(material, EquipmentSlot.FEET, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
+        public WoolArmorItem(Registries.WoolArmorRegistriesName name, ArmorMaterial material) {
+            this.helmet     = new ArmorItem(material, EquipmentSlot.HEAD, new Item.Properties().tab(WoolArmor.CREATIVE_TAB));
+            this.chestplate = new ArmorItem(material, EquipmentSlot.CHEST, new Item.Properties().tab(WoolArmor.CREATIVE_TAB));
+            this.leggings   = new ArmorItem(material, EquipmentSlot.LEGS, new Item.Properties().tab(WoolArmor.CREATIVE_TAB));
+            this.boots      = new WoolArmorBoots(material, EquipmentSlot.FEET, new Item.Properties().tab(WoolArmor.CREATIVE_TAB));
 
             this.helmet.setRegistryName(Utils.rl(Registries.MOD_ID, name.getHelmet()));
             this.chestplate.setRegistryName(Utils.rl(Registries.MOD_ID, name.getChestplate()));

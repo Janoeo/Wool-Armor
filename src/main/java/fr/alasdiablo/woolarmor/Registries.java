@@ -22,6 +22,11 @@ public class Registries {
     public static final WoolArmorRegistriesName PURPLE_WOOL_ARMOR     = of("purple_wool");
     public static final WoolArmorRegistriesName RED_WOOL_ARMOR        = of("red_wool");
     public static final WoolArmorRegistriesName YELLOW_WOOL_ARMOR     = of("yellow_wool");
+    public static       ItemLike[]              WOOLS_LIST            = new ItemLike[]{
+            Blocks.BLACK_WOOL, Blocks.BLUE_WOOL, Blocks.WHITE_WOOL, Blocks.BROWN_WOOL, Blocks.CYAN_WOOL, Blocks.GRAY_WOOL, Blocks.GREEN_WOOL,
+            Blocks.LIGHT_BLUE_WOOL, Blocks.LIGHT_GRAY_WOOL, Blocks.LIME_WOOL, Blocks.MAGENTA_WOOL, Blocks.ORANGE_WOOL, Blocks.PINK_WOOL, Blocks.PURPLE_WOOL,
+            Blocks.RED_WOOL, Blocks.YELLOW_WOOL
+    };
 
     private static WoolArmorRegistriesName of(String name) {
         return new WoolArmorRegistriesName(name);
@@ -44,10 +49,4 @@ public class Registries {
             return this.name + "_boots";
         }
     }
-
-    public static ItemLike[] WOOLS_LIST = new ItemLike[]{
-            Blocks.BLACK_WOOL, Blocks.BLUE_WOOL, Blocks.WHITE_WOOL, Blocks.BROWN_WOOL, Blocks.CYAN_WOOL, Blocks.GRAY_WOOL, Blocks.GREEN_WOOL,
-            Blocks.LIGHT_BLUE_WOOL, Blocks.LIGHT_GRAY_WOOL, Blocks.LIME_WOOL, Blocks.MAGENTA_WOOL, Blocks.ORANGE_WOOL, Blocks.PINK_WOOL, Blocks.PURPLE_WOOL,
-            Blocks.RED_WOOL, Blocks.YELLOW_WOOL
-    };
 }

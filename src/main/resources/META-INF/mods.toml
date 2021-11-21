@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[37,)"
-license = "All rights reserved"
+license = "LGPL-3.0"
 [[mods]]
 modId = "wool_armor"
 version = "${file.jarVersion}"
@@ -19,5 +19,11 @@ side = "BOTH"
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.17.1,1.18)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.wool_armor]]
+modId = "diolib"
+mandatory = true
+versionRange = "[2.0.17,)"
 ordering = "NONE"
 side = "BOTH"

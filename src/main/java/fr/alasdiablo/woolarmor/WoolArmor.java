@@ -1,12 +1,19 @@
 package fr.alasdiablo.woolarmor;
 
-import fr.alasdiablo.woolarmor.data.WoolItemModelProvider;
+import fr.alasdiablo.diolib.gui.GroundItemGroup;
+import fr.alasdiablo.woolarmor.data.*;
 import fr.alasdiablo.woolarmor.init.WoolItems;
+import fr.alasdiablo.woolarmor.item.WoolArmorBoots;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import org.apache.logging.log4j.LogManager;
@@ -17,10 +24,23 @@ public class WoolArmor {
 
     public static final Logger logger = LogManager.getLogger(Registries.MOD_ID);
 
+    @MethodsReturnNonnullByDefault
+    public static final CreativeModeTab CREATIVE_TAB = new GroundItemGroup("wool.armor") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(WoolItems.RED_WOOL_ARMOR.getChestplate());
+        }
+    };
+
     public WoolArmor() {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
+        modBus.addListener(this::onCommonSetup);
         modBus.addListener(this::gatherData);
         modBus.addGenericListener(Item.class, WoolItems::init);
+    }
+
+    private void onCommonSetup(final FMLCommonSetupEvent event) {
+        MinecraftForge.EVENT_BUS.addListener(WoolArmorBoots::onLivingFall);
     }
 
     private void gatherData(GatherDataEvent event) {
@@ -29,13 +49,16 @@ public class WoolArmor {
         final ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
         WoolArmor.logger.debug("Add Item Model Provider");
-        generator.addProvider(new WoolItemModelProvider(generator, existingFileHelper));
+        generator.addProvider(new ModelProvider(generator, existingFileHelper));
 
-//        WoolArmor.logger.debug("Add Language Provider");
-//        generator.addProvider(new EnglishProvider(generator));
-//        generator.addProvider(new FrenchProvider(generator));
-//
-//        WoolArmor.logger.debug("Add Recipes Provider");
-//        generator.addProvider(new FoundationRecipeProvider(generator));
+        WoolArmor.logger.debug("Add Language Provider");
+        generator.addProvider(new EnglishProvider(generator));
+        generator.addProvider(new FrenchProvider(generator));
+
+        WoolArmor.logger.debug("Add Tags Provider");
+        generator.addProvider(new TagsProvider(generator, existingFileHelper));
+
+        WoolArmor.logger.debug("Add Recipes Provider");
+        generator.addProvider(new RecipesProvider(generator));
     }
 }
