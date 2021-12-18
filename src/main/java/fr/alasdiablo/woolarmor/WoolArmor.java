@@ -1,6 +1,6 @@
 package fr.alasdiablo.woolarmor;
 
-import fr.alasdiablo.diolib.gui.GroundItemGroup;
+import fr.alasdiablo.diolib.item.GroundCreativeModeTab;
 import fr.alasdiablo.woolarmor.data.*;
 import fr.alasdiablo.woolarmor.init.WoolItems;
 import fr.alasdiablo.woolarmor.item.WoolArmorBoots;
@@ -25,7 +25,7 @@ public class WoolArmor {
     public static final Logger logger = LogManager.getLogger(Registries.MOD_ID);
 
     @MethodsReturnNonnullByDefault
-    public static final CreativeModeTab CREATIVE_TAB = new GroundItemGroup("wool.armor") {
+    public static final CreativeModeTab CREATIVE_TAB = new GroundCreativeModeTab("wool.armor") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(WoolItems.RED_WOOL_ARMOR.getChestplate());

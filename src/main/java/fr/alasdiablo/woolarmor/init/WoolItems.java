@@ -1,7 +1,6 @@
 package fr.alasdiablo.woolarmor.init;
 
-import fr.alasdiablo.diolib.util.RegistryHelper;
-import fr.alasdiablo.diolib.util.Utils;
+import fr.alasdiablo.diolib.registries.RegistryHelper;
 import fr.alasdiablo.woolarmor.Registries;
 import fr.alasdiablo.woolarmor.WoolArmor;
 import fr.alasdiablo.woolarmor.item.WoolArmorBoots;
@@ -70,10 +69,10 @@ public class WoolItems {
             this.leggings   = new ArmorItem(material, EquipmentSlot.LEGS, new Item.Properties().tab(WoolArmor.CREATIVE_TAB));
             this.boots      = new WoolArmorBoots(material, EquipmentSlot.FEET, new Item.Properties().tab(WoolArmor.CREATIVE_TAB));
 
-            this.helmet.setRegistryName(Utils.rl(Registries.MOD_ID, name.getHelmet()));
-            this.chestplate.setRegistryName(Utils.rl(Registries.MOD_ID, name.getChestplate()));
-            this.leggings.setRegistryName(Utils.rl(Registries.MOD_ID, name.getLeggings()));
-            this.boots.setRegistryName(Utils.rl(Registries.MOD_ID, name.getBoots()));
+            this.helmet.setRegistryName(RegistryHelper.rl(Registries.MOD_ID, name.getHelmet()));
+            this.chestplate.setRegistryName(RegistryHelper.rl(Registries.MOD_ID, name.getChestplate()));
+            this.leggings.setRegistryName(RegistryHelper.rl(Registries.MOD_ID, name.getLeggings()));
+            this.boots.setRegistryName(RegistryHelper.rl(Registries.MOD_ID, name.getBoots()));
         }
 
         public Item getHelmet() {
