@@ -1,7 +1,12 @@
 package fr.alasdiablo.woolarmor;
 
 import fr.alasdiablo.diolib.item.GroundCreativeModeTab;
-import fr.alasdiablo.woolarmor.data.*;
+import fr.alasdiablo.woolarmor.data.ModelProvider;
+import fr.alasdiablo.woolarmor.data.RecipesProvider;
+import fr.alasdiablo.woolarmor.data.TagsProvider;
+import fr.alasdiablo.woolarmor.data.language.EnglishProvider;
+import fr.alasdiablo.woolarmor.data.language.FrenchProvider;
+import fr.alasdiablo.woolarmor.data.language.SpanishProvider;
 import fr.alasdiablo.woolarmor.init.WoolItems;
 import fr.alasdiablo.woolarmor.item.WoolArmorBoots;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -54,6 +59,7 @@ public class WoolArmor {
         WoolArmor.logger.debug("Add Language Provider");
         generator.addProvider(new EnglishProvider(generator));
         generator.addProvider(new FrenchProvider(generator));
+        generator.addProvider(new SpanishProvider(generator));
 
         WoolArmor.logger.debug("Add Tags Provider");
         generator.addProvider(new TagsProvider(generator, existingFileHelper));

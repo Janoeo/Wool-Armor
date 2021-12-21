@@ -1,4 +1,4 @@
-package fr.alasdiablo.woolarmor.data;
+package fr.alasdiablo.woolarmor.data.language;
 
 import fr.alasdiablo.woolarmor.Registries;
 import fr.alasdiablo.woolarmor.WoolArmor;

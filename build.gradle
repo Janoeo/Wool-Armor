@@ -18,7 +18,7 @@ apply plugin: 'maven-publish'
 // ***************************************** //
 def majorVersion = 2
 def minorVersion = 1
-def buildVersion = 1
+def buildVersion = 2
 def isExperimental = false
 version = "${majorVersion}.${minorVersion}.${buildVersion}"
 if (isExperimental) {
@@ -92,7 +92,7 @@ repositories {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.18.1-39.0.5'
-    implementation 'curse.maven:diabololib-422014:3570915'
+    implementation 'curse.maven:diabololib-422014:3574178'
 }
 
 jar {
