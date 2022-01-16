@@ -1,14 +1,17 @@
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://repo.spongepowered.org/maven' }
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
+apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'maven-publish'
 
 // ***************************************** //
@@ -17,7 +20,7 @@ apply plugin: 'maven-publish'
 //                                           //
 // ***************************************** //
 def majorVersion = 2
-def minorVersion = 1
+def minorVersion = 2
 def buildVersion = 2
 def isExperimental = false
 version = "${majorVersion}.${minorVersion}.${buildVersion}"
@@ -91,8 +94,9 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.1-39.0.5'
-    implementation 'curse.maven:diabololib-422014:3574178'
+    minecraft 'net.minecraftforge:forge:1.18.1-39.0.17'
+    implementation fileTree(dir:'lib', include:'*.jar') // Jar Lib
+    annotationProcessor 'org.spongepowered:mixin:0.8.4:processor'
 }
 
 jar {
