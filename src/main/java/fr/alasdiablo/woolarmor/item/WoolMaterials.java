@@ -8,6 +8,8 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 import static fr.alasdiablo.woolarmor.Registries.*;
 
@@ -42,14 +44,16 @@ public enum WoolMaterials implements ArmorMaterial {
         this.repairIngredient     = Ingredient.of(Registries.WOOLS_LIST);
     }
 
+    @Contract(pure = true)
     @Override
-    public int getDurabilityForSlot(EquipmentSlot p_40484_) {
-        return HEALTH_PER_SLOT[p_40484_.getIndex()] * this.durabilityMultiplier;
+    public int getDurabilityForSlot(@NotNull EquipmentSlot slot) {
+        return HEALTH_PER_SLOT[slot.getIndex()] * this.durabilityMultiplier;
     }
 
+    @Contract(pure = true)
     @Override
-    public int getDefenseForSlot(EquipmentSlot p_40487_) {
-        return this.slotProtections[p_40487_.getIndex()];
+    public int getDefenseForSlot(@NotNull EquipmentSlot slot) {
+        return this.slotProtections[slot.getIndex()];
     }
 
     @Override

@@ -1,6 +1,6 @@
 package fr.alasdiablo.woolarmor.data;
 
-import fr.alasdiablo.diolib.tag.DioTags;
+import fr.alasdiablo.diolib.api.tag.DioTags;
 import fr.alasdiablo.woolarmor.Registries;
 import fr.alasdiablo.woolarmor.init.WoolTags;
 import net.minecraft.data.DataGenerator;

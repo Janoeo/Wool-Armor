@@ -20,22 +20,25 @@ public class ModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         this.registerItem(
-                BLACK_WOOL_ARMOR.getHelmet(), BLACK_WOOL_ARMOR.getChestplate(), BLACK_WOOL_ARMOR.getLeggings(), BLACK_WOOL_ARMOR.getBoots(),
-                BLUE_WOOL_ARMOR.getHelmet(), BLUE_WOOL_ARMOR.getChestplate(), BLUE_WOOL_ARMOR.getLeggings(), BLUE_WOOL_ARMOR.getBoots(),
-                WHITE_WOOL_ARMOR.getHelmet(), WHITE_WOOL_ARMOR.getChestplate(), WHITE_WOOL_ARMOR.getLeggings(), WHITE_WOOL_ARMOR.getBoots(),
-                BROWN_WOOL_ARMOR.getHelmet(), BROWN_WOOL_ARMOR.getChestplate(), BROWN_WOOL_ARMOR.getLeggings(), BROWN_WOOL_ARMOR.getBoots(),
-                CYAN_WOOL_ARMOR.getHelmet(), CYAN_WOOL_ARMOR.getChestplate(), CYAN_WOOL_ARMOR.getLeggings(), CYAN_WOOL_ARMOR.getBoots(),
-                GRAY_WOOL_ARMOR.getHelmet(), GRAY_WOOL_ARMOR.getChestplate(), GRAY_WOOL_ARMOR.getLeggings(), GRAY_WOOL_ARMOR.getBoots(),
-                GREEN_WOOL_ARMOR.getHelmet(), GREEN_WOOL_ARMOR.getChestplate(), GREEN_WOOL_ARMOR.getLeggings(), GREEN_WOOL_ARMOR.getBoots(),
-                LIGHT_BLUE_WOOL_ARMOR.getHelmet(), LIGHT_BLUE_WOOL_ARMOR.getChestplate(), LIGHT_BLUE_WOOL_ARMOR.getLeggings(), LIGHT_BLUE_WOOL_ARMOR.getBoots(),
-                LIGHT_GRAY_WOOL_ARMOR.getHelmet(), LIGHT_GRAY_WOOL_ARMOR.getChestplate(), LIGHT_GRAY_WOOL_ARMOR.getLeggings(), LIGHT_GRAY_WOOL_ARMOR.getBoots(),
-                LIME_WOOL_ARMOR.getHelmet(), LIME_WOOL_ARMOR.getChestplate(), LIME_WOOL_ARMOR.getLeggings(), LIME_WOOL_ARMOR.getBoots(),
-                MAGENTA_WOOL_ARMOR.getHelmet(), MAGENTA_WOOL_ARMOR.getChestplate(), MAGENTA_WOOL_ARMOR.getLeggings(), MAGENTA_WOOL_ARMOR.getBoots(),
-                ORANGE_WOOL_ARMOR.getHelmet(), ORANGE_WOOL_ARMOR.getChestplate(), ORANGE_WOOL_ARMOR.getLeggings(), ORANGE_WOOL_ARMOR.getBoots(),
-                PINK_WOOL_ARMOR.getHelmet(), PINK_WOOL_ARMOR.getChestplate(), PINK_WOOL_ARMOR.getLeggings(), PINK_WOOL_ARMOR.getBoots(),
-                PURPLE_WOOL_ARMOR.getHelmet(), PURPLE_WOOL_ARMOR.getChestplate(), PURPLE_WOOL_ARMOR.getLeggings(), PURPLE_WOOL_ARMOR.getBoots(),
-                RED_WOOL_ARMOR.getHelmet(), RED_WOOL_ARMOR.getChestplate(), RED_WOOL_ARMOR.getLeggings(), RED_WOOL_ARMOR.getBoots(),
-                YELLOW_WOOL_ARMOR.getHelmet(), YELLOW_WOOL_ARMOR.getChestplate(), YELLOW_WOOL_ARMOR.getLeggings(), YELLOW_WOOL_ARMOR.getBoots()
+                BLACK_WOOL_ARMOR.getHelmetName(), BLACK_WOOL_ARMOR.getChestplateName(), BLACK_WOOL_ARMOR.getLeggingsName(), BLACK_WOOL_ARMOR.getBootsName(),
+                BLUE_WOOL_ARMOR.getHelmetName(), BLUE_WOOL_ARMOR.getChestplateName(), BLUE_WOOL_ARMOR.getLeggingsName(), BLUE_WOOL_ARMOR.getBootsName(),
+                WHITE_WOOL_ARMOR.getHelmetName(), WHITE_WOOL_ARMOR.getChestplateName(), WHITE_WOOL_ARMOR.getLeggingsName(), WHITE_WOOL_ARMOR.getBootsName(),
+                BROWN_WOOL_ARMOR.getHelmetName(), BROWN_WOOL_ARMOR.getChestplateName(), BROWN_WOOL_ARMOR.getLeggingsName(), BROWN_WOOL_ARMOR.getBootsName(),
+                CYAN_WOOL_ARMOR.getHelmetName(), CYAN_WOOL_ARMOR.getChestplateName(), CYAN_WOOL_ARMOR.getLeggingsName(), CYAN_WOOL_ARMOR.getBootsName(),
+                GRAY_WOOL_ARMOR.getHelmetName(), GRAY_WOOL_ARMOR.getChestplateName(), GRAY_WOOL_ARMOR.getLeggingsName(), GRAY_WOOL_ARMOR.getBootsName(),
+                GREEN_WOOL_ARMOR.getHelmetName(), GREEN_WOOL_ARMOR.getChestplateName(), GREEN_WOOL_ARMOR.getLeggingsName(), GREEN_WOOL_ARMOR.getBootsName(),
+                LIGHT_BLUE_WOOL_ARMOR.getHelmetName(), LIGHT_BLUE_WOOL_ARMOR.getChestplateName(), LIGHT_BLUE_WOOL_ARMOR.getLeggingsName(),
+                LIGHT_BLUE_WOOL_ARMOR.getBootsName(),
+                LIGHT_GRAY_WOOL_ARMOR.getHelmetName(), LIGHT_GRAY_WOOL_ARMOR.getChestplateName(), LIGHT_GRAY_WOOL_ARMOR.getLeggingsName(),
+                LIGHT_GRAY_WOOL_ARMOR.getBootsName(),
+                LIME_WOOL_ARMOR.getHelmetName(), LIME_WOOL_ARMOR.getChestplateName(), LIME_WOOL_ARMOR.getLeggingsName(), LIME_WOOL_ARMOR.getBootsName(),
+                MAGENTA_WOOL_ARMOR.getHelmetName(), MAGENTA_WOOL_ARMOR.getChestplateName(), MAGENTA_WOOL_ARMOR.getLeggingsName(),
+                MAGENTA_WOOL_ARMOR.getBootsName(),
+                ORANGE_WOOL_ARMOR.getHelmetName(), ORANGE_WOOL_ARMOR.getChestplateName(), ORANGE_WOOL_ARMOR.getLeggingsName(), ORANGE_WOOL_ARMOR.getBootsName(),
+                PINK_WOOL_ARMOR.getHelmetName(), PINK_WOOL_ARMOR.getChestplateName(), PINK_WOOL_ARMOR.getLeggingsName(), PINK_WOOL_ARMOR.getBootsName(),
+                PURPLE_WOOL_ARMOR.getHelmetName(), PURPLE_WOOL_ARMOR.getChestplateName(), PURPLE_WOOL_ARMOR.getLeggingsName(), PURPLE_WOOL_ARMOR.getBootsName(),
+                RED_WOOL_ARMOR.getHelmetName(), RED_WOOL_ARMOR.getChestplateName(), RED_WOOL_ARMOR.getLeggingsName(), RED_WOOL_ARMOR.getBootsName(),
+                YELLOW_WOOL_ARMOR.getHelmetName(), YELLOW_WOOL_ARMOR.getChestplateName(), YELLOW_WOOL_ARMOR.getLeggingsName(), YELLOW_WOOL_ARMOR.getBootsName()
         );
     }
 

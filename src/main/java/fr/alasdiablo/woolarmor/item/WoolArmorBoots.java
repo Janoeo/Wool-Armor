@@ -3,7 +3,8 @@ package fr.alasdiablo.woolarmor.item;
 import fr.alasdiablo.woolarmor.init.WoolTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -28,10 +29,10 @@ public class WoolArmorBoots extends ArmorItem {
     }
 
     public static void onLivingFall(LivingFallEvent event) {
-        var entityLiving = event.getEntityLiving();
+        var entityLiving = event.getEntity();
         var itemStack    = entityLiving.getItemBySlot(EquipmentSlot.FEET);
         var item         = itemStack.getItem();
-        if (item.getTags().contains(WoolTags.FALL_DAMAGE_REDUCERS.getName())) {
+        if (itemStack.is(WoolTags.FALL_DAMAGE_REDUCERS)) {
             event.setDamageMultiplier(0.5f);
             if (calculateFallDamage(entityLiving, event.getDistance(), event.getDamageMultiplier()) >= 1) {
                 item.setDamage(itemStack, item.getDamage(itemStack) + 1);
@@ -54,7 +55,7 @@ public class WoolArmorBoots extends ArmorItem {
     public void appendHoverText(
             ItemStack itemStack, @Nullable Level level, List<Component> componentList, TooltipFlag tooltipFlag
     ) {
-        var component = new TranslatableComponent("wool.armor.boots.hover.text").withStyle(ChatFormatting.GRAY);
+        var component = MutableComponent.create(new TranslatableContents("wool.armor.boots.hover.text")).withStyle(ChatFormatting.GRAY);
         componentList.add(component);
     }
 }

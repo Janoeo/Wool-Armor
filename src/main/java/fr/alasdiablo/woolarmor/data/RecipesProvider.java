@@ -1,6 +1,5 @@
 package fr.alasdiablo.woolarmor.data;
 
-import fr.alasdiablo.woolarmor.init.WoolItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -43,7 +42,7 @@ public class RecipesProvider extends RecipeProvider {
         this.armor(YELLOW_WOOL_ARMOR, Blocks.YELLOW_WOOL, "has_yellow_wool");
     }
 
-    private void armor(WoolItems.WoolArmorItem output, ItemLike input, String criterion) {
+    private void armor(WoolArmorSet output, ItemLike input, String criterion) {
         this.helmet(output.getHelmet(), input, criterion);
         this.chestplate(output.getChestplate(), input, criterion);
         this.leggings(output.getLeggings(), input, criterion);
