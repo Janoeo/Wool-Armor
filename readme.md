@@ -1,5 +1,5 @@
-[![Downloads](http://cf.way2muchnoise.eu/full_wool-armor_downloads.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/wool-armor)
-[![Versions](http://cf.way2muchnoise.eu/versions/wool-armor.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/wool-armor/files)
+[![Downloads](http://cf.way2muchnoise.eu/full_236888_downloads.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/wool-armor)
+[![Versions](http://cf.way2muchnoise.eu/versions/236888.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/wool-armor/files)
 [![size](https://img.shields.io/github/repo-size/Janoeo/Wool-Armor?style=for-the-badge)](https://github.com/Janoeo/Wool-Armor)
 [![license](https://img.shields.io/github/license/Janoeo/Wool-Armor?style=for-the-badge)](https://github.com/Janoeo/Wool-Armor/blob/master/LICENSE)
 [![discord](https://img.shields.io/discord/630863620842061877?style=for-the-badge)](https://discord.gg/KkzqnzA)
