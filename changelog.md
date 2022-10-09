@@ -1,3 +1,7 @@
+## 3.2.5
++ Update to Minecraft 1.19.2
++ Fix missing tooltip
+
 ## 3.2.4
 + Update to Minecraft 1.19
 

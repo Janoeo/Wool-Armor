@@ -3,6 +3,7 @@ package fr.alasdiablo.woolarmor.init;
 import fr.alasdiablo.diolib.api.item.armor.ArmorItemRegistryName;
 import fr.alasdiablo.woolarmor.Registries;
 import fr.alasdiablo.woolarmor.WoolArmor;
+import fr.alasdiablo.woolarmor.item.WoolArmorBoots;
 import fr.alasdiablo.woolarmor.item.WoolMaterials;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
@@ -72,7 +73,7 @@ public class WoolItems {
             this.helmetRegistryObject     = register.register(registryName.getHelmetName(), () -> new ArmorItem(material, EquipmentSlot.HEAD, properties));
             this.chestplateRegistryObject = register.register(registryName.getChestplateName(), () -> new ArmorItem(material, EquipmentSlot.CHEST, properties));
             this.leggingsRegistryObject   = register.register(registryName.getLeggingsName(), () -> new ArmorItem(material, EquipmentSlot.LEGS, properties));
-            this.bootsRegistryObject      = register.register(registryName.getBootsName(), () -> new ArmorItem(material, EquipmentSlot.FEET, properties));
+            this.bootsRegistryObject      = register.register(registryName.getBootsName(), () -> new WoolArmorBoots(material, EquipmentSlot.FEET, properties));
         }
 
         public @NotNull Item getHelmet() {

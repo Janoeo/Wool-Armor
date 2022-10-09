@@ -25,7 +25,7 @@ apply plugin: 'org.spongepowered.mixin'
 // ***************************************** //
 def majorVersion = 3
 def minorVersion = 2
-def buildVersion = 4
+def buildVersion = 5
 def isExperimental = false
 version = "${majorVersion}.${minorVersion}.${buildVersion}"
 if (isExperimental) {
@@ -52,7 +52,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 def deobfSourceClassifier
 
 minecraft {
-    mappings channel: 'official', version: '1.19'
+    mappings channel: 'parchment', version: '2022.09.18-1.19.2'
     deobfSourceClassifier = getMappings().get()
     runs {
         client {
@@ -118,7 +118,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19-41.1.0'
+    minecraft 'net.minecraftforge:forge:1.19.2-43.1.33'
     implementation fileTree(dir:'lib', include:'*.jar') // Jar Lib
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }

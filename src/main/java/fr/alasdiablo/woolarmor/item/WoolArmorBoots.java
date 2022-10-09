@@ -22,9 +22,7 @@ import java.util.List;
 
 @ParametersAreNonnullByDefault
 public class WoolArmorBoots extends ArmorItem {
-    public WoolArmorBoots(
-            ArmorMaterial material, EquipmentSlot equipmentSlot, Properties properties
-    ) {
+    public WoolArmorBoots(ArmorMaterial material, EquipmentSlot equipmentSlot, Properties properties) {
         super(material, equipmentSlot, properties);
     }
 
@@ -52,10 +50,7 @@ public class WoolArmorBoots extends ArmorItem {
     }
 
     @Override
-    public void appendHoverText(
-            ItemStack itemStack, @Nullable Level level, List<Component> componentList, TooltipFlag tooltipFlag
-    ) {
-        var component = MutableComponent.create(new TranslatableContents("wool.armor.boots.hover.text")).withStyle(ChatFormatting.GRAY);
-        componentList.add(component);
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> tooltip, TooltipFlag tooltipFlag) {
+        tooltip.add(Component.translatable("wool.armor.boots.hover.text").withStyle(ChatFormatting.GRAY));
     }
 }
