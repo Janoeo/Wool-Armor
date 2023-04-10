@@ -3,24 +3,33 @@ package fr.alasdiablo.woolarmor.data;
 import fr.alasdiablo.diolib.api.tag.DioTags;
 import fr.alasdiablo.woolarmor.Registries;
 import fr.alasdiablo.woolarmor.init.WoolTags;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
+import java.util.concurrent.CompletableFuture;
+
 import static fr.alasdiablo.woolarmor.init.WoolItems.*;
 
-public class TagsProvider extends ItemTagsProvider {
-    public TagsProvider(DataGenerator generator, @Nullable ExistingFileHelper existingFileHelper) {
-        super(generator, new BlockTagsProvider(generator, Registries.MOD_ID, existingFileHelper), Registries.MOD_ID, existingFileHelper);
+public class WoolArmorItemsTagsProvider extends ItemTagsProvider {
+    public WoolArmorItemsTagsProvider(
+            PackOutput output, CompletableFuture<HolderLookup.Provider> lookup,
+            TagsProvider<Block> blockTagsProvider,
+            @Nullable ExistingFileHelper existingFileHelper
+    ) {
+        super(output, lookup, blockTagsProvider, Registries.MOD_ID, existingFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(@NotNull HolderLookup.Provider pProvider) {
         Item[] helmet = new Item[]{
                 BLACK_WOOL_ARMOR.getHelmet(), BLUE_WOOL_ARMOR.getHelmet(), WHITE_WOOL_ARMOR.getHelmet(), BROWN_WOOL_ARMOR.getHelmet(),
                 CYAN_WOOL_ARMOR.getHelmet(), GRAY_WOOL_ARMOR.getHelmet(), GREEN_WOOL_ARMOR.getHelmet(), LIGHT_BLUE_WOOL_ARMOR.getHelmet(),

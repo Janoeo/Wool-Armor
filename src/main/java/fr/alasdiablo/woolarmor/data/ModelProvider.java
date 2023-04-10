@@ -1,6 +1,6 @@
 package fr.alasdiablo.woolarmor.data;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -13,8 +13,8 @@ public class ModelProvider extends ItemModelProvider {
 
     private static final ResourceLocation GENERATED = new ResourceLocation("item/generated");
 
-    public ModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, MOD_ID, existingFileHelper);
+    public ModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, MOD_ID, existingFileHelper);
     }
 
     @Override

@@ -1,7 +1,8 @@
 package fr.alasdiablo.woolarmor.data;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.level.ItemLike;
@@ -16,13 +17,13 @@ import static fr.alasdiablo.woolarmor.init.WoolItems.*;
 public class RecipesProvider extends RecipeProvider {
     private Consumer<FinishedRecipe> builder;
 
-    public RecipesProvider(DataGenerator generator) {
-        super(generator);
+    public RecipesProvider(PackOutput output) {
+        super(output);
     }
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> builder) {
-        this.builder = builder;
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+        this.builder = consumer;
 
         this.armor(BLACK_WOOL_ARMOR, Blocks.BLACK_WOOL, "has_black_wool");
         this.armor(BLUE_WOOL_ARMOR, Blocks.BLUE_WOOL, "has_blue_wool");
@@ -49,19 +50,41 @@ public class RecipesProvider extends RecipeProvider {
         this.boots(output.getBoots(), input, criterion);
     }
 
-    private void helmet(ItemLike output, ItemLike input, String criterion) {
-        ShapedRecipeBuilder.shaped(output).pattern("CCC").pattern("C C").define('C', input).unlockedBy(criterion, has(input)).save(this.builder);
+    private void helmet(ItemLike resultIn, ItemLike input, String criterion) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, resultIn)
+                .pattern("CCC")
+                .pattern("C C")
+                .define('C', input)
+                .unlockedBy(criterion, has(input))
+                .save(this.builder);
     }
 
-    private void chestplate(ItemLike output, ItemLike input, String criterion) {
-        ShapedRecipeBuilder.shaped(output).pattern("C C").pattern("CCC").pattern("CCC").define('C', input).unlockedBy(criterion, has(input)).save(this.builder);
+    private void chestplate(ItemLike resultIn, ItemLike input, String criterion) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, resultIn)
+                .pattern("C C")
+                .pattern("CCC")
+                .pattern("CCC")
+                .define('C', input)
+                .unlockedBy(criterion, has(input))
+                .save(this.builder);
     }
 
-    private void leggings(ItemLike output, ItemLike input, String criterion) {
-        ShapedRecipeBuilder.shaped(output).pattern("CCC").pattern("C C").pattern("C C").define('C', input).unlockedBy(criterion, has(input)).save(this.builder);
+    private void leggings(ItemLike resultIn, ItemLike input, String criterion) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, resultIn)
+                .pattern("CCC")
+                .pattern("C C")
+                .pattern("C C")
+                .define('C', input)
+                .unlockedBy(criterion, has(input))
+                .save(this.builder);
     }
 
-    private void boots(ItemLike output, ItemLike input, String criterion) {
-        ShapedRecipeBuilder.shaped(output).pattern("C C").pattern("C C").define('C', input).unlockedBy(criterion, has(input)).save(this.builder);
+    private void boots(ItemLike resultIn, ItemLike input, String criterion) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, resultIn)
+                .pattern("C C")
+                .pattern("C C")
+                .define('C', input)
+                .unlockedBy(criterion, has(input))
+                .save(this.builder);
     }
 }
