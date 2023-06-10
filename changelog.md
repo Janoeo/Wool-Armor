@@ -1,3 +1,9 @@
+## 4.2.7
++ Update to Minecraft 1.20
+
+## 3.2.6
++ Update to Minecraft 1.19.3
+
 ## 3.2.5
 + Update to Minecraft 1.19.2
 + Fix missing tooltip
@@ -6,7 +12,7 @@
 + Update to Minecraft 1.19
 
 ## 2.2.3
-+ Wool armor now have the same interaction as leather armor with powder snow (require last version of diabolo lib)
++ Wool armor now has the same interaction as leather armor with powder snow (require last version of diabolo lib)
 
 ## 2.1.2
 + Add spanish translation and fix unicode
@@ -17,8 +23,8 @@
 ## 2.0.0
 
 ### Initial release for 1.17 and future version
-+ Complet rewrite
-+ All type of wool available
++ Complete rewrite
++ All types of wool available
 + Damage reduction on fall
 
 ## 1.1

@@ -64,5 +64,5 @@
   "item.wool_armor.yellow_wool_helmet": "Yellow Wool Helmet",
   "item.wool_armor.yellow_wool_leggings": "Yellow Wool Leggings",
   "wool.armor.boots.hover.text": "Reduces fall damage by 2",
-  "itemGroup.wool.armor": "Wool Armor"
+  "item_group.wool_armor.tab": "Wool Armor"
 }

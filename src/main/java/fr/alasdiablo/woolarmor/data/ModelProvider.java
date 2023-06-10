@@ -1,5 +1,6 @@
 package fr.alasdiablo.woolarmor.data;
 
+import fr.alasdiablo.woolarmor.WoolArmor;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -14,7 +15,7 @@ public class ModelProvider extends ItemModelProvider {
     private static final ResourceLocation GENERATED = new ResourceLocation("item/generated");
 
     public ModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, MOD_ID, existingFileHelper);
+        super(output, WoolArmor.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -43,6 +44,6 @@ public class ModelProvider extends ItemModelProvider {
     }
 
     private void registerItem(String... items) {
-        Arrays.stream(items).forEach(item -> withExistingParent(item, GENERATED).texture("layer0", new ResourceLocation(MOD_ID, "item/" + item)));
+        Arrays.stream(items).forEach(item -> withExistingParent(item, GENERATED).texture("layer0", new ResourceLocation(WoolArmor.MOD_ID, "item/" + item)));
     }
 }

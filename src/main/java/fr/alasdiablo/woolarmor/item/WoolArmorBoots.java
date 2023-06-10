@@ -20,7 +20,7 @@ import java.util.List;
 
 @ParametersAreNonnullByDefault
 public class WoolArmorBoots extends ArmorItem {
-    public WoolArmorBoots(ArmorMaterial material, EquipmentSlot equipmentSlot, Properties properties) {
+    public WoolArmorBoots(ArmorMaterial material, ArmorItem.Type equipmentSlot, Properties properties) {
         super(material, equipmentSlot, properties);
     }
 
@@ -45,6 +45,11 @@ public class WoolArmorBoots extends ArmorItem {
             return Mth.ceil((actualFallingDistance - jumpHeight) * damageMultiplier);
         }
         return Mth.ceil(actualFallingDistance * damageMultiplier);
+    }
+
+    @Override
+    public boolean canWalkOnPowderedSnow(ItemStack stack, LivingEntity wearer) {
+        return stack.getItem() instanceof WoolArmorBoots || super.canWalkOnPowderedSnow(stack, wearer);
     }
 
     @Override

@@ -1,7 +1,6 @@
 package fr.alasdiablo.woolarmor.data;
 
-import fr.alasdiablo.diolib.api.tag.DioTags;
-import fr.alasdiablo.woolarmor.Registries;
+import fr.alasdiablo.woolarmor.WoolArmor;
 import fr.alasdiablo.woolarmor.init.WoolTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -14,7 +13,6 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
-
 import java.util.concurrent.CompletableFuture;
 
 import static fr.alasdiablo.woolarmor.init.WoolItems.*;
@@ -22,10 +20,10 @@ import static fr.alasdiablo.woolarmor.init.WoolItems.*;
 public class WoolArmorItemsTagsProvider extends ItemTagsProvider {
     public WoolArmorItemsTagsProvider(
             PackOutput output, CompletableFuture<HolderLookup.Provider> lookup,
-            TagsProvider<Block> blockTagsProvider,
+            @NotNull TagsProvider<Block> blockTagsProvider,
             @Nullable ExistingFileHelper existingFileHelper
     ) {
-        super(output, lookup, blockTagsProvider, Registries.MOD_ID, existingFileHelper);
+        super(output, lookup, blockTagsProvider.contentsGetter(), WoolArmor.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -59,8 +57,6 @@ public class WoolArmorItemsTagsProvider extends ItemTagsProvider {
         };
 
         this.tag(WoolTags.FALL_DAMAGE_REDUCERS).add(boots);
-
-        this.tag(DioTags.BOOTS_WALK_ON_POWDER_SNOW).add(boots);
 
         this.tag(ItemTags.FREEZE_IMMUNE_WEARABLES).add(helmet);
         this.tag(ItemTags.FREEZE_IMMUNE_WEARABLES).add(chestplate);

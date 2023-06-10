@@ -1,14 +1,14 @@
 package fr.alasdiablo.woolarmor.item;
 
 import fr.alasdiablo.woolarmor.Registries;
+import fr.alasdiablo.woolarmor.WoolArmor;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import static fr.alasdiablo.woolarmor.Registries.*;
@@ -34,7 +34,7 @@ public enum WoolMaterials implements ArmorMaterial {
     private final        Ingredient repairIngredient;
 
     WoolMaterials(String name) {
-        this.name                 = new ResourceLocation(Registries.MOD_ID, name).toString();
+        this.name                 = new ResourceLocation(WoolArmor.MOD_ID, name).toString();
         this.durabilityMultiplier = 3;
         this.slotProtections      = new int[]{ 1, 2, 2, 1 };
         this.enchantmentValue     = 10;
@@ -44,16 +44,14 @@ public enum WoolMaterials implements ArmorMaterial {
         this.repairIngredient     = Ingredient.of(Registries.WOOLS_LIST);
     }
 
-    @Contract(pure = true)
     @Override
-    public int getDurabilityForSlot(@NotNull EquipmentSlot slot) {
-        return HEALTH_PER_SLOT[slot.getIndex()] * this.durabilityMultiplier;
+    public int getDurabilityForType(@NotNull ArmorItem.Type type) {
+        return HEALTH_PER_SLOT[type.getSlot().getIndex()] * this.durabilityMultiplier;
     }
 
-    @Contract(pure = true)
     @Override
-    public int getDefenseForSlot(@NotNull EquipmentSlot slot) {
-        return this.slotProtections[slot.getIndex()];
+    public int getDefenseForType(@NotNull ArmorItem.Type type) {
+        return this.slotProtections[type.getSlot().getIndex()];
     }
 
     @Override

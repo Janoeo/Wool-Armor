@@ -23,9 +23,9 @@ apply plugin: 'org.spongepowered.mixin'
 //        Standard versioning system         //
 //                                           //
 // ***************************************** //
-def majorVersion = 3
+def majorVersion = 4
 def minorVersion = 2
-def buildVersion = 6
+def buildVersion = 7
 def isExperimental = false
 version = "${majorVersion}.${minorVersion}.${buildVersion}"
 if (isExperimental) {
@@ -33,7 +33,7 @@ if (isExperimental) {
 }
 
 group = 'fr.alasdiablo.woolarmor'
-archivesBaseName = 'Wool-Armor'
+archivesBaseName = 'wool-armor'
 
 def manifestAttributes = [
         "Specification-Title"     : "Wool Armor",
@@ -52,7 +52,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 def deobfSourceClassifier
 
 minecraft {
-    mappings channel: 'parchment', version: '2022.12.18-1.19.3'
+    mappings channel: 'parchment', version: '1.19.3-2023.03.12-1.20'
     deobfSourceClassifier = getMappings().get()
     runs {
         client {
@@ -118,7 +118,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19.3-44.1.5'
+    minecraft 'net.minecraftforge:forge:1.20-46.0.2'
     implementation fileTree(dir:'lib', include:'*.jar') // Jar Lib
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }

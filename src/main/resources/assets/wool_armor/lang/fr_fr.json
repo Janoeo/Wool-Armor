@@ -64,5 +64,5 @@
   "item.wool_armor.yellow_wool_helmet": "Casque en laine jaune",
   "item.wool_armor.yellow_wool_leggings": "Jambières en laine jaune",
   "wool.armor.boots.hover.text": "Réduit les dégâts de chute par 2",
-  "itemGroup.wool.armor": "Armure en Laine"
+  "item_group.wool_armor.tab": "Armure en Laine"
 }

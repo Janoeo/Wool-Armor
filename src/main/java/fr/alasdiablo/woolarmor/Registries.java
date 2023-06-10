@@ -7,8 +7,6 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 public class Registries {
-    public static final String MOD_ID = "wool_armor";
-
     public static final ArmorItemRegistryName BLACK_WOOL_ARMOR      = of("black_wool");
     public static final ArmorItemRegistryName BLUE_WOOL_ARMOR       = of("blue_wool");
     public static final ArmorItemRegistryName WHITE_WOOL_ARMOR      = of("white_wool");
@@ -33,6 +31,6 @@ public class Registries {
 
     @Contract("_ -> new")
     private static @NotNull ArmorItemRegistryName of(String name) {
-        return new ArmorItemRegistryName(MOD_ID, name);
+        return new ArmorItemRegistryName(WoolArmor.MOD_ID, name);
     }
 }

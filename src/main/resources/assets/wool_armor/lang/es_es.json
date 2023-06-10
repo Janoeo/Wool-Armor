@@ -64,5 +64,5 @@
   "item.wool_armor.yellow_wool_helmet": "Casco de lana amarillo",
   "item.wool_armor.yellow_wool_leggings": "Grebas de lana amarillo",
   "wool.armor.boots.hover.text": "Reduce el daño por caída en 2",
-  "itemGroup.wool.armor": "Armadura de Lana"
+  "item_group.wool_armor.tab": "Armadura de Lana"
 }

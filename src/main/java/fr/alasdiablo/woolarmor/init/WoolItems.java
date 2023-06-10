@@ -5,11 +5,10 @@ import fr.alasdiablo.woolarmor.Registries;
 import fr.alasdiablo.woolarmor.WoolArmor;
 import fr.alasdiablo.woolarmor.item.WoolArmorBoots;
 import fr.alasdiablo.woolarmor.item.WoolMaterials;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -20,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class WoolItems {
-    static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Registries.MOD_ID);
+    static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, WoolArmor.MOD_ID);
 
     public static final WoolArmorSet BLACK_WOOL_ARMOR;
     public static final WoolArmorSet BLUE_WOOL_ARMOR;
@@ -73,10 +72,13 @@ public class WoolItems {
                 @NotNull ArmorItemRegistryName registryName, @NotNull ArmorMaterial material, Item.@NotNull Properties properties,
                 @NotNull DeferredRegister<Item> register
         ) {
-            this.helmetRegistryObject     = register.register(registryName.getHelmetName(), () -> new ArmorItem(material, EquipmentSlot.HEAD, properties));
-            this.chestplateRegistryObject = register.register(registryName.getChestplateName(), () -> new ArmorItem(material, EquipmentSlot.CHEST, properties));
-            this.leggingsRegistryObject   = register.register(registryName.getLeggingsName(), () -> new ArmorItem(material, EquipmentSlot.LEGS, properties));
-            this.bootsRegistryObject      = register.register(registryName.getBootsName(), () -> new WoolArmorBoots(material, EquipmentSlot.FEET, properties));
+            this.helmetRegistryObject     = register.register(registryName.getHelmetName(), () -> new ArmorItem(material, ArmorItem.Type.HELMET, properties));
+            this.chestplateRegistryObject = register.register(
+                    registryName.getChestplateName(), () -> new ArmorItem(material, ArmorItem.Type.CHESTPLATE, properties));
+            this.leggingsRegistryObject   = register.register(
+                    registryName.getLeggingsName(), () -> new ArmorItem(material, ArmorItem.Type.LEGGINGS, properties));
+            this.bootsRegistryObject      = register.register(
+                    registryName.getBootsName(), () -> new WoolArmorBoots(material, ArmorItem.Type.BOOTS, properties));
         }
 
         public @NotNull List<Item> getAll() {
@@ -109,24 +111,22 @@ public class WoolItems {
         ITEMS.register(bus);
     }
 
-    public static void onCreativeModeTabEvent(@NotNull CreativeModeTabEvent.BuildContents event) {
-        if (event.getTab() == WoolArmor.CREATIVE_TAB) {
-            BLACK_WOOL_ARMOR.getAll().forEach(event::accept);
-            BLUE_WOOL_ARMOR.getAll().forEach(event::accept);
-            WHITE_WOOL_ARMOR.getAll().forEach(event::accept);
-            BROWN_WOOL_ARMOR.getAll().forEach(event::accept);
-            CYAN_WOOL_ARMOR.getAll().forEach(event::accept);
-            GRAY_WOOL_ARMOR.getAll().forEach(event::accept);
-            GREEN_WOOL_ARMOR.getAll().forEach(event::accept);
-            LIGHT_BLUE_WOOL_ARMOR.getAll().forEach(event::accept);
-            LIGHT_GRAY_WOOL_ARMOR.getAll().forEach(event::accept);
-            LIME_WOOL_ARMOR.getAll().forEach(event::accept);
-            MAGENTA_WOOL_ARMOR.getAll().forEach(event::accept);
-            ORANGE_WOOL_ARMOR.getAll().forEach(event::accept);
-            PINK_WOOL_ARMOR.getAll().forEach(event::accept);
-            PURPLE_WOOL_ARMOR.getAll().forEach(event::accept);
-            RED_WOOL_ARMOR.getAll().forEach(event::accept);
-            YELLOW_WOOL_ARMOR.getAll().forEach(event::accept);
-        }
+    public static void displayItemsGenerator(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output output) {
+        BLACK_WOOL_ARMOR.getAll().forEach(output::accept);
+        BLUE_WOOL_ARMOR.getAll().forEach(output::accept);
+        WHITE_WOOL_ARMOR.getAll().forEach(output::accept);
+        BROWN_WOOL_ARMOR.getAll().forEach(output::accept);
+        CYAN_WOOL_ARMOR.getAll().forEach(output::accept);
+        GRAY_WOOL_ARMOR.getAll().forEach(output::accept);
+        GREEN_WOOL_ARMOR.getAll().forEach(output::accept);
+        LIGHT_BLUE_WOOL_ARMOR.getAll().forEach(output::accept);
+        LIGHT_GRAY_WOOL_ARMOR.getAll().forEach(output::accept);
+        LIME_WOOL_ARMOR.getAll().forEach(output::accept);
+        MAGENTA_WOOL_ARMOR.getAll().forEach(output::accept);
+        ORANGE_WOOL_ARMOR.getAll().forEach(output::accept);
+        PINK_WOOL_ARMOR.getAll().forEach(output::accept);
+        PURPLE_WOOL_ARMOR.getAll().forEach(output::accept);
+        RED_WOOL_ARMOR.getAll().forEach(output::accept);
+        YELLOW_WOOL_ARMOR.getAll().forEach(output::accept);
     }
 }
