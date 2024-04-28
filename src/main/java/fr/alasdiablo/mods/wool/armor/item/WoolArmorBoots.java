@@ -1,6 +1,6 @@
-package fr.alasdiablo.woolarmor.item;
+package fr.alasdiablo.mods.wool.armor.item;
 
-import fr.alasdiablo.woolarmor.init.WoolTags;
+import fr.alasdiablo.mods.wool.armor.init.WoolTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
@@ -12,7 +12,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.event.entity.living.LivingFallEvent;
+import net.neoforged.neoforge.event.entity.living.LivingFallEvent;
 
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;

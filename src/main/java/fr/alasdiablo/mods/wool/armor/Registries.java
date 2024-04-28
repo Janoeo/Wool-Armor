@@ -1,4 +1,4 @@
-package fr.alasdiablo.woolarmor;
+package fr.alasdiablo.mods.wool.armor;
 
 import fr.alasdiablo.diolib.api.item.armor.ArmorItemRegistryName;
 import net.minecraft.world.level.ItemLike;

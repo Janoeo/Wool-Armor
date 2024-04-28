@@ -1,25 +1,25 @@
-package fr.alasdiablo.woolarmor.init;
+package fr.alasdiablo.mods.wool.armor.init;
 
 import fr.alasdiablo.diolib.api.item.armor.ArmorItemRegistryName;
-import fr.alasdiablo.woolarmor.Registries;
-import fr.alasdiablo.woolarmor.WoolArmor;
-import fr.alasdiablo.woolarmor.item.WoolArmorBoots;
-import fr.alasdiablo.woolarmor.item.WoolMaterials;
+import fr.alasdiablo.mods.wool.armor.Registries;
+import fr.alasdiablo.mods.wool.armor.WoolArmor;
+import fr.alasdiablo.mods.wool.armor.item.WoolArmorBoots;
+import fr.alasdiablo.mods.wool.armor.item.WoolMaterials;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 public class WoolItems {
-    static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, WoolArmor.MOD_ID);
+    static final DeferredRegister<Item> ITEMS = DeferredRegister.createItems(WoolArmor.MOD_ID);
 
     public static final WoolArmorSet BLACK_WOOL_ARMOR;
     public static final WoolArmorSet BLUE_WOOL_ARMOR;
@@ -63,10 +63,10 @@ public class WoolItems {
     }
 
     public static class WoolArmorSet {
-        private final RegistryObject<Item> helmetRegistryObject;
-        private final RegistryObject<Item> chestplateRegistryObject;
-        private final RegistryObject<Item> leggingsRegistryObject;
-        private final RegistryObject<Item> bootsRegistryObject;
+        private final DeferredHolder<Item, ArmorItem> helmetRegistryObject;
+        private final DeferredHolder<Item, ArmorItem>   chestplateRegistryObject;
+        private final DeferredHolder<Item, ArmorItem> leggingsRegistryObject;
+        private final DeferredHolder<Item, ArmorItem> bootsRegistryObject;
 
         public WoolArmorSet(
                 @NotNull ArmorItemRegistryName registryName, @NotNull ArmorMaterial material, Item.@NotNull Properties properties,
@@ -111,7 +111,7 @@ public class WoolItems {
         ITEMS.register(bus);
     }
 
-    public static void displayItemsGenerator(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output output) {
+    public static void displayItemsGenerator(CreativeModeTab.ItemDisplayParameters parameters, @NotNull CreativeModeTab.Output output) {
         BLACK_WOOL_ARMOR.getAll().forEach(output::accept);
         BLUE_WOOL_ARMOR.getAll().forEach(output::accept);
         WHITE_WOOL_ARMOR.getAll().forEach(output::accept);

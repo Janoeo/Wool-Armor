@@ -1,29 +1,28 @@
-package fr.alasdiablo.woolarmor.data;
+package fr.alasdiablo.mods.wool.armor.data;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.function.Consumer;
 
-import static fr.alasdiablo.woolarmor.init.WoolItems.*;
+import static fr.alasdiablo.mods.wool.armor.init.WoolItems.*;
 
 @ParametersAreNonnullByDefault
 public class RecipesProvider extends RecipeProvider {
-    private Consumer<FinishedRecipe> builder;
+    private RecipeOutput builder;
 
     public RecipesProvider(PackOutput output) {
         super(output);
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-        this.builder = consumer;
+    protected void buildRecipes(RecipeOutput pRecipeOutput) {
+        this.builder = pRecipeOutput;
 
         this.armor(BLACK_WOOL_ARMOR, Blocks.BLACK_WOOL, "has_black_wool");
         this.armor(BLUE_WOOL_ARMOR, Blocks.BLUE_WOOL, "has_blue_wool");

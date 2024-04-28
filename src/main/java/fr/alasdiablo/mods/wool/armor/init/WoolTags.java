@@ -1,6 +1,6 @@
-package fr.alasdiablo.woolarmor.init;
+package fr.alasdiablo.mods.wool.armor.init;
 
-import fr.alasdiablo.woolarmor.WoolArmor;
+import fr.alasdiablo.mods.wool.armor.WoolArmor;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;

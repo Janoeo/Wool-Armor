@@ -1,31 +1,27 @@
-modLoader = "javafml"
-loaderVersion = "[47,)"
-license = "LGPL-3.0 License"
-issueTrackerURL = "https://github.com/Janoeo/Wool-Armor/issues"
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
 [[mods]]
-    modId = "wool_armor"
-    version = "${file.jarVersion}"
-    displayName = "Wool Armor"
-    displayURL = "https://github.com/Janoeo/Wool-Armor"
-    authors = "AlasDiablo, Safyrus"
-    description = '''
-    This mod just add wool armor
-    '''
-[[dependencies.wool_armor]]
-    modId = "forge"
-    mandatory = true
-    versionRange = "[47,)"
-    ordering = "NONE"
-    side = "BOTH"
-[[dependencies.wool_armor]]
-    modId = "minecraft"
-    mandatory = true
-    versionRange = "[1.20.1,1.21)"
-    ordering = "NONE"
-    side = "BOTH"
-[[dependencies.wool_armor]]
-    modId = "diolib"
-    mandatory = true
-    versionRange = "[6.7.33,)"
-    ordering = "NONE"
-    side = "BOTH"
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="${mod_authors}"
+description='''${mod_description}'''
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="${neo_version_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.${mod_id}]]
+    modId="diolib"
+    type="required"
+    versionRange="[7.7.34,)"
+    ordering="NONE"
+    side="BOTH"

@@ -1,14 +1,14 @@
-package fr.alasdiablo.woolarmor.data;
+package fr.alasdiablo.mods.wool.armor.data;
 
-import fr.alasdiablo.woolarmor.WoolArmor;
+import fr.alasdiablo.mods.wool.armor.WoolArmor;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.Arrays;
 
-import static fr.alasdiablo.woolarmor.Registries.*;
+import static fr.alasdiablo.mods.wool.armor.Registries.*;
 
 public class ModelProvider extends ItemModelProvider {
 

@@ -1,7 +1,7 @@
-package fr.alasdiablo.woolarmor.item;
+package fr.alasdiablo.mods.wool.armor.item;
 
-import fr.alasdiablo.woolarmor.Registries;
-import fr.alasdiablo.woolarmor.WoolArmor;
+import fr.alasdiablo.mods.wool.armor.Registries;
+import fr.alasdiablo.mods.wool.armor.WoolArmor;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -11,7 +11,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
-import static fr.alasdiablo.woolarmor.Registries.*;
+import static fr.alasdiablo.mods.wool.armor.Registries.*;
 
 @MethodsReturnNonnullByDefault
 public enum WoolMaterials implements ArmorMaterial {
