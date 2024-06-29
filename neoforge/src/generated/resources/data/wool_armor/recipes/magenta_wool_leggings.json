@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "minecraft:magenta_wool"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "C C",
+    "C C"
+  ],
+  "result": {
+    "item": "wool_armor:magenta_wool_leggings"
+  }
+}

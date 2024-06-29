@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "minecraft:orange_wool"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "C C"
+  ],
+  "result": {
+    "item": "wool_armor:orange_wool_helmet"
+  }
+}

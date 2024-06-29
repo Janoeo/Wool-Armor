@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "minecraft:gray_wool"
+    }
+  },
+  "pattern": [
+    "C C",
+    "CCC",
+    "CCC"
+  ],
+  "result": {
+    "item": "wool_armor:gray_wool_chestplate"
+  }
+}

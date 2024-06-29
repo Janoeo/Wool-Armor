@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "minecraft:lime_wool"
+    }
+  },
+  "pattern": [
+    "C C",
+    "CCC",
+    "CCC"
+  ],
+  "result": {
+    "item": "wool_armor:lime_wool_chestplate"
+  }
+}

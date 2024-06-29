@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "C C",
+    "CCC",
+    "CCC"
+  ],
+  "result": {
+    "item": "wool_armor:white_wool_chestplate"
+  }
+}

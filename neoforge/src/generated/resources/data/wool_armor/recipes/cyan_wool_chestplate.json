@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "minecraft:cyan_wool"
+    }
+  },
+  "pattern": [
+    "C C",
+    "CCC",
+    "CCC"
+  ],
+  "result": {
+    "item": "wool_armor:cyan_wool_chestplate"
+  }
+}
