@@ -1,3 +1,7 @@
+[![Downloads CurseForge](https://img.shields.io/curseforge/dt/236888?style=for-the-badge&logo=curseforge&labelColor=2D2D2D&color=f16436)](https://www.curseforge.com/minecraft/mc-mods/recycling-factory)
+[![Downloads Modrinth](https://img.shields.io/modrinth/dt/ULum2LqY?style=for-the-badge&logo=modrinth&labelColor=2D2D2D&color=00AF5C)](https://modrinth.com/mod/recycling-factory)
+![Versions](http://cf.way2muchnoise.eu/versions/236888.svg?badge_style=for_the_badge)
+
 ## About Dio's Wool Armor
 
 ***Dio's Wool Armor*** is a mod who add armour for every wool in the game.
@@ -12,8 +16,9 @@ This mod also adds fall damage reduction when wearing wool boots and frost resis
 
 ### Dependencies
 
-+ Required
-  + [DiaboloLib](https://modrinth.com/mod/diabololib)
+- Dio's Lib
+  - [CurseForge](https://www.curseforge.com/minecraft/mc-mods/diabololib)
+  - [Modrinth](https://modrinth.com/mod/diabololib)
 
 ## Contributing
 
