@@ -2,6 +2,7 @@ package fr.alasdiablo.mods.wool.armor.mixin;
 
 import fr.alasdiablo.mods.wool.armor.init.WoolItems;
 import fr.alasdiablo.mods.wool.armor.utils.BootsUtils;
+import net.minecraft.core.Holder;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -23,7 +24,7 @@ public abstract class LivingEntityMixin {
     public abstract ItemStack getItemBySlot(EquipmentSlot equipmentSlot);
 
     @Shadow
-    public abstract MobEffectInstance getEffect(MobEffect mobEffect);
+    public abstract MobEffectInstance getEffect(Holder<MobEffect> effect);
 
     @Inject(method = "calculateFallDamage", at = @At("RETURN"), cancellable = true)
     protected void calculateFallDamage(float distance, float damageMultiplier, @NotNull CallbackInfoReturnable<Integer> callback) {

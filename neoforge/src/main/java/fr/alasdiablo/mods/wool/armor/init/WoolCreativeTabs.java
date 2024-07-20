@@ -1,6 +1,6 @@
 package fr.alasdiablo.mods.wool.armor.init;
 
-import fr.alasdiablo.diolib.api.item.GroundCreativeModeTab;
+import fr.alasdiablo.mods.lib.api.item.GroundCreativeModeTab;
 import fr.alasdiablo.mods.wool.armor.WoolArmorCommon;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;

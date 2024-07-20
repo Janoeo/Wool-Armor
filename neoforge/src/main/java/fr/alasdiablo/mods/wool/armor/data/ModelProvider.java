@@ -12,7 +12,7 @@ import static fr.alasdiablo.mods.wool.armor.Registries.*;
 
 public class ModelProvider extends ItemModelProvider {
 
-    private static final ResourceLocation GENERATED = new ResourceLocation("item/generated");
+    private static final ResourceLocation GENERATED = ResourceLocation.withDefaultNamespace("item/generated");
 
     public ModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, WoolArmorCommon.MOD_ID, existingFileHelper);
@@ -89,6 +89,9 @@ public class ModelProvider extends ItemModelProvider {
     }
 
     private void registerItem(String... items) {
-        Arrays.stream(items).forEach(item -> withExistingParent(item, GENERATED).texture("layer0", new ResourceLocation(WoolArmorCommon.MOD_ID, "item/" + item)));
+        Arrays.stream(items).forEach(
+                item -> withExistingParent(item, GENERATED)
+                        .texture("layer0", ResourceLocation.fromNamespaceAndPath(WoolArmorCommon.MOD_ID, "item/" + item))
+        );
     }
 }

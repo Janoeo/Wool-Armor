@@ -11,6 +11,6 @@ public class WoolTags {
     public static final TagKey<Item> FALL_DAMAGE_REDUCERS = fallDamageReducers();
 
     private static @NotNull TagKey<Item> fallDamageReducers() {
-        return ItemTags.create(new ResourceLocation(WoolArmorCommon.MOD_ID, "fall_damage_reducers"));
+        return ItemTags.create(ResourceLocation.fromNamespaceAndPath(WoolArmorCommon.MOD_ID, "fall_damage_reducers"));
     }
 }

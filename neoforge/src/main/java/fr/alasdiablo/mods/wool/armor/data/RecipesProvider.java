@@ -1,5 +1,6 @@
 package fr.alasdiablo.mods.wool.armor.data;
 
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -9,6 +10,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.concurrent.CompletableFuture;
 
 import static fr.alasdiablo.mods.wool.armor.init.WoolItems.*;
 
@@ -16,8 +18,8 @@ import static fr.alasdiablo.mods.wool.armor.init.WoolItems.*;
 public class RecipesProvider extends RecipeProvider {
     private RecipeOutput builder;
 
-    public RecipesProvider(PackOutput output) {
-        super(output);
+    public RecipesProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+        super(output, registries);
     }
 
     @Override

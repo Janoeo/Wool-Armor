@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "wool_armor:item/white_wool_chestplate"
-  }
-}

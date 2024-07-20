@@ -2,6 +2,7 @@ package fr.alasdiablo.mods.wool.armor.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -9,13 +10,15 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.concurrent.CompletableFuture;
+
 import static fr.alasdiablo.mods.wool.armor.init.WoolItems.*;
 
 public class RecipesProvider extends FabricRecipeProvider {
     private RecipeOutput builder;
 
-    public RecipesProvider(FabricDataOutput output) {
-        super(output);
+    public RecipesProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+        super(output, registries);
     }
 
     @Override

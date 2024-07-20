@@ -1,9 +1,10 @@
 package fr.alasdiablo.mods.wool.armor.init;
 
-import fr.alasdiablo.diolib.api.item.armor.ArmorItemRegistryName;
+import fr.alasdiablo.mods.lib.api.item.armor.ArmorItemRegistryName;
 import fr.alasdiablo.mods.wool.armor.Registries;
+import fr.alasdiablo.mods.wool.armor.item.CommonWoolArmorMaterials;
 import fr.alasdiablo.mods.wool.armor.item.WoolArmorBoots;
-import fr.alasdiablo.mods.wool.armor.item.WoolMaterials;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ArmorItem;
@@ -56,8 +57,8 @@ public class WoolItems {
     }
 
     @Contract("_, _ -> new")
-    private static @NotNull WoolArmorSet of(ArmorItemRegistryName name, ArmorMaterial material) {
-        return new WoolArmorSet(name, material, new Item.Properties());
+    private static @NotNull WoolArmorSet of(ArmorItemRegistryName name, Holder<ArmorMaterial> material) {
+        return new WoolArmorSet(name, material);
     }
 
     public static class WoolArmorSet {
@@ -68,31 +69,54 @@ public class WoolItems {
 
         public WoolArmorSet(
                 @NotNull ArmorItemRegistryName registryName,
-                @NotNull ArmorMaterial material,
-                Item.@NotNull Properties properties
+                @NotNull Holder<ArmorMaterial> material
         ) {
             this.helmetRegistryObject = Registry.register(
                     BuiltInRegistries.ITEM,
                     registryName.getHelmet(),
-                    new ArmorItem(material, ArmorItem.Type.HELMET, properties)
+                    new ArmorItem(
+                            material,
+                            ArmorItem.Type.HELMET,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.HELMET.getDurability(CommonWoolArmorMaterials.getHelmetDurabilityFactor())
+                            )
+                    )
             );
 
             this.chestplateRegistryObject = Registry.register(
                     BuiltInRegistries.ITEM,
                     registryName.getChestplate(),
-                    new ArmorItem(material, ArmorItem.Type.CHESTPLATE, properties)
+                    new ArmorItem(
+                            material,
+                            ArmorItem.Type.CHESTPLATE,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.HELMET.getDurability(CommonWoolArmorMaterials.getChestplateDurabilityFactor())
+                            )
+                    )
             );
 
             this.leggingsRegistryObject = Registry.register(
                     BuiltInRegistries.ITEM,
                     registryName.getLeggings(),
-                    new ArmorItem(material, ArmorItem.Type.LEGGINGS, properties)
+                    new ArmorItem(
+                            material,
+                            ArmorItem.Type.LEGGINGS,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.HELMET.getDurability(CommonWoolArmorMaterials.getLeggingsDurabilityFactor())
+                            )
+                    )
             );
 
             this.bootsRegistryObject = Registry.register(
                     BuiltInRegistries.ITEM,
                     registryName.getBoots(),
-                    new WoolArmorBoots(material, ArmorItem.Type.BOOTS, properties)
+                    new WoolArmorBoots(
+                            material,
+                            ArmorItem.Type.BOOTS,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.HELMET.getDurability(CommonWoolArmorMaterials.getBootsDurabilityFactor())
+                            )
+                    )
             );
         }
 

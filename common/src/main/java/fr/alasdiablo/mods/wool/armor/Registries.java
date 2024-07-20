@@ -1,6 +1,6 @@
 package fr.alasdiablo.mods.wool.armor;
 
-import fr.alasdiablo.diolib.api.item.armor.ArmorItemRegistryName;
+import fr.alasdiablo.mods.lib.api.item.armor.ArmorItemRegistryName;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.Contract;

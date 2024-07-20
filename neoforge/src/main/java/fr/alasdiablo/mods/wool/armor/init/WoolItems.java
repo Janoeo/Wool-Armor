@@ -1,10 +1,11 @@
 package fr.alasdiablo.mods.wool.armor.init;
 
-import fr.alasdiablo.diolib.api.item.armor.ArmorItemRegistryName;
+import fr.alasdiablo.mods.lib.api.item.armor.ArmorItemRegistryName;
 import fr.alasdiablo.mods.wool.armor.Registries;
 import fr.alasdiablo.mods.wool.armor.WoolArmorCommon;
+import fr.alasdiablo.mods.wool.armor.item.CommonWoolArmorMaterials;
 import fr.alasdiablo.mods.wool.armor.item.WoolArmorBoots;
-import fr.alasdiablo.mods.wool.armor.item.WoolMaterials;
+import net.minecraft.core.Holder;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.CreativeModeTab;
@@ -57,27 +58,61 @@ public class WoolItems {
     }
 
     @Contract("_, _ -> new")
-    private static @NotNull WoolArmorSet of(ArmorItemRegistryName name, ArmorMaterial material) {
-        return new WoolArmorSet(name, material, new Item.Properties(), ITEMS);
+    private static @NotNull WoolArmorSet of(ArmorItemRegistryName name, Holder<ArmorMaterial> material) {
+        return new WoolArmorSet(name, material, ITEMS);
     }
 
     public static class WoolArmorSet {
         private final DeferredHolder<Item, ArmorItem> helmetRegistryObject;
-        private final DeferredHolder<Item, ArmorItem>   chestplateRegistryObject;
+        private final DeferredHolder<Item, ArmorItem> chestplateRegistryObject;
         private final DeferredHolder<Item, ArmorItem> leggingsRegistryObject;
         private final DeferredHolder<Item, ArmorItem> bootsRegistryObject;
 
         public WoolArmorSet(
-                @NotNull ArmorItemRegistryName registryName, @NotNull ArmorMaterial material, Item.@NotNull Properties properties,
+                @NotNull ArmorItemRegistryName registryName,
+                @NotNull Holder<ArmorMaterial> material,
                 @NotNull DeferredRegister<Item> register
         ) {
-            this.helmetRegistryObject     = register.register(registryName.getHelmetName(), () -> new ArmorItem(material, ArmorItem.Type.HELMET, properties));
+            this.helmetRegistryObject     = register.register(
+                    registryName.getHelmetName(),
+                    () -> new ArmorItem(
+                            material,
+                            ArmorItem.Type.HELMET,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.HELMET.getDurability(CommonWoolArmorMaterials.getHelmetDurabilityFactor())
+                            )
+                    )
+            );
             this.chestplateRegistryObject = register.register(
-                    registryName.getChestplateName(), () -> new ArmorItem(material, ArmorItem.Type.CHESTPLATE, properties));
+                    registryName.getChestplateName(),
+                    () -> new ArmorItem(
+                            material,
+                            ArmorItem.Type.CHESTPLATE,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.CHESTPLATE.getDurability(CommonWoolArmorMaterials.getChestplateDurabilityFactor())
+                            )
+                    )
+            );
             this.leggingsRegistryObject   = register.register(
-                    registryName.getLeggingsName(), () -> new ArmorItem(material, ArmorItem.Type.LEGGINGS, properties));
+                    registryName.getLeggingsName(),
+                    () -> new ArmorItem(
+                            material,
+                            ArmorItem.Type.LEGGINGS,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.LEGGINGS.getDurability(CommonWoolArmorMaterials.getLeggingsDurabilityFactor())
+                            )
+                    )
+            );
             this.bootsRegistryObject      = register.register(
-                    registryName.getBootsName(), () -> new WoolArmorBoots(material, ArmorItem.Type.BOOTS, properties));
+                    registryName.getBootsName(),
+                    () -> new WoolArmorBoots(
+                            material,
+                            ArmorItem.Type.BOOTS,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.BOOTS.getDurability(CommonWoolArmorMaterials.getBootsDurabilityFactor())
+                            )
+                    )
+            );
         }
 
         public @NotNull List<Item> getAll() {
