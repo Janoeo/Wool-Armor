@@ -1,3 +1,6 @@
+## 7.2.11
++ Update to Minecraft 1.21
+
 ## 6.2.10
 + Now using multi modloader
 
